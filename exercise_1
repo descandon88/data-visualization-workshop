@@ -1,0 +1,13 @@
+
+library(ggplot2)
+library(RColorBrewer)
+library(forcats)
+
+ff <- 'https://www.dropbox.com/s/k9q8ee65vnxngzb/indiana.csv?dl=1'
+download.file(ff, destfile = 'indiana_data.csv')
+indiana <- read.csv('indiana_data.csv')
+
+str(indiana)
+
+ggplot(data = indiana, aes(x=annual_inc,y=loan_amnt)) + 
+  geom_point() + theme(aspect.ratio=1)
